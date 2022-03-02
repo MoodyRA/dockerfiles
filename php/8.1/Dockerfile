@@ -9,10 +9,8 @@ RUN apk --no-cache add bash openssh-client ca-certificates \
 
 RUN docker-php-ext-install pdo_mysql \
 	&& docker-php-ext-install zip \
-	&& docker-php-ext-install gd \
 	&& pecl install xdebug-3.1.3 \
     && docker-php-ext-enable xdebug \
-    && docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ \
 	&& docker-php-source extract \
 	&& docker-php-source delete
 
